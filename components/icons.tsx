@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const SunIcon = ({ className = 'w-6 h-6' }: { className?: string }) => (
@@ -53,5 +54,17 @@ export const AcademicCapIcon = ({ className = 'w-6 h-6' }: { className?: string 
         <path d="M12 14l9-5-9-5-9 5 9 5z" />
         <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.998 12.078 12.078 0 01.665-6.479L12 14z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20M12 13.778L16 16l-4 2.222L8 16l4-2.222z" />
+    </svg>
+);
+
+export const BriefcaseIcon = ({ className = 'w-6 h-6' }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.075c0 1.313-.984 2.4-2.25 2.4H6c-1.266 0-2.25-.975-2.25-2.25V6.75c0-1.266.984-2.25 2.25-2.25h2.25a.75.75 0 01.75.75v.75h5.25v-.75a.75.75 0 01.75-.75h2.25c1.266 0 2.25.984 2.25 2.25v4.075M12 12V3m0 9l-3-3m3 3l3-3" />
+    </svg>
+);
+
+export const DownloadIcon = ({ className = 'w-6 h-6' }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
     </svg>
 );

@@ -1,15 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Powered Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#040408',
+                        'dark-card': '#0a0a10',
+                        'dark-border': 'rgba(255, 255, 255, 0.1)',
+                        indigo: {
+                            '50': '#eef2ff', '100': '#e0e7ff', '200': '#c7d2fe', '300': '#a5b4fc',
+                            '400': '#818cf8', '500': '#6366f1', '600': '#4f46e5', '700': '#4338ca',
+                            '800': '#3730a3', '900': '#312e81', '950': '#1e1b4b'
+                        }
+                    },
                     keyframes: {
                         typing: {
                             "0%": { width: "0%" },
@@ -20,19 +37,23 @@
                             '50%': { borderColor: 'currentColor' }
                         },
                         'fade-in-up': {
-                            '0%': {
-                                opacity: '0',
-                                transform: 'translateY(20px)'
-                            },
-                            '100%': {
-                                opacity: '1',
-                                transform: 'translateY(0)'
-                            },
-                        }
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'aurora': {
+                            from: { backgroundPosition: '0% 50%' },
+                            to: { backgroundPosition: '100% 50%' },
+                        },
+                        spotlight: {
+                            '0%': { opacity: 0, transform: 'translate(-72px, -62px) scale(0.5)' },
+                            '100%': { opacity: 1, transform: 'translate(-50%,-40%) scale(1)' },
+                        },
                     },
                     animation: {
-                        typing: 'typing 2s steps(20, end) forwards, blink-caret .75s step-end infinite',
-                        'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+                        typing: 'typing 2s steps(22, end) forwards, blink-caret .75s step-end infinite',
+                        'fade-in-up': 'fade-in-up 0.5s ease-out',
+                        'aurora': 'aurora 15s ease infinite alternate',
+                        spotlight: 'spotlight 2s ease .75s 1 forwards',
                     }
                 }
             }
@@ -59,11 +80,26 @@
     </script>
     <style>
         .animate-fade-in-up {
-            animation-fill-mode: both;
+            animation-fill-mode: forwards;
+        }
+        .spotlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at var(--x) var(--y), transparent 10%, rgba(255, 255, 255, 0.04) 30%, rgba(255, 255, 255, 0.08) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+        .spotlight-card:hover::before {
+            opacity: 1;
         }
     </style>
 </head>
-<body class="bg-white dark:bg-slate-900">
+<body class="bg-white dark:bg-dark-bg font-sans">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>
