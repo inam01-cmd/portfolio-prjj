@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    keyframes: {
+                        typing: {
+                            "0%": { width: "0%" },
+                            "100%": { width: "100%" }
+                        },
+                        'blink-caret': {
+                            'from, to': { borderColor: 'transparent' },
+                            '50%': { borderColor: 'currentColor' }
+                        },
+                        'fade-in-up': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    },
+                    animation: {
+                        typing: 'typing 2s steps(20, end) forwards, blink-caret .75s step-end infinite',
+                        'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        // Prevents Flash of Unstyled Content (FOUC) for dark mode
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+        "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0"
+      }
+    }
+    </script>
+    <style>
+        .animate-fade-in-up {
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
