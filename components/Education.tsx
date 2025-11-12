@@ -5,33 +5,24 @@ import { BookOpenIcon, AcademicCapIcon } from './icons';
 
 const educationHistory: EducationItem[] = [
     {
-        institution: 'University of Technology',
-        degree: 'Master of Science in Computer Science',
-        period: '2020 - 2022',
+        institution: 'The Islamia University of Bahawalpur',
+        degree: 'Assocaite in Computer Science',
+        period: '2021 - 2023',
     },
     {
-        institution: 'State University',
-        degree: 'Bachelor of Science in Software Engineering',
-        period: '2016 - 2020',
+        institution: 'AL Nafi International College',
+        degree: 'Cloud Cyber Security',
+        period: '2023 - 2024',
     },
 ];
 
 const certifications: CertificationItem[] = [
     {
-        name: 'Google Certified Professional Cloud Architect',
-        issuer: 'Google Cloud',
-        date: 'Issued Jun 2023',
+        name: 'Cloud Cyber Security',
+        issuer: 'Al Nafi International College',
+        date: 'Issued Jun 2024',
     },
-    {
-        name: 'Certified Kubernetes Application Developer (CKAD)',
-        issuer: 'The Linux Foundation',
-        date: 'Issued Dec 2022',
-    },
-    {
-        name: 'AWS Certified Solutions Architect – Associate',
-        issuer: 'Amazon Web Services',
-        date: 'Issued May 2021',
-    },
+
 ];
 
 const CertificationCard: React.FC<{ cert: CertificationItem }> = ({ cert }) => {

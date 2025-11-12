@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ theme, setTheme, activePage, setPage })
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <a href="#" onClick={() => setPage('home')} className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
-                            JohnDoe.dev
+                            InamKhan.dev
                         </a>
                     </div>
                     <div className="hidden md:flex items-center space-x-6">
